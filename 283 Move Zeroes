@@ -1,0 +1,20 @@
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        std::vector<int>::iterator it=nums.begin();
+        std::vector<int>::iterator it0=it;
+        while(it!=nums.end()){
+            while(it0!=nums.end()&&*it0==0){
+                it0++;
+            }
+            if(it0==nums.end())
+                break;
+            if(*it==0){
+                *it++=*it0;
+                *it0++=0;
+            }
+            else if(it++==it0)
+                it0++;
+        } 
+    }
+};
